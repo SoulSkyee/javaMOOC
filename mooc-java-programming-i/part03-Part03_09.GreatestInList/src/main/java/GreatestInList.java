@@ -1,0 +1,39 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GreatestInList {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        while (true) {
+            int input = Integer.valueOf(scanner.nextLine());
+            if (input == -1) {
+                break;
+            }
+
+            list.add(input);
+        }
+        
+        System.out.println("");
+
+        // implement finding the greatest number in the list here
+        int greatest = list.get(0);
+
+        for(int i = 0; i < list.size(); i++){
+            int num = list.get(i);
+            if (greatest < num) {
+                greatest = num;
+            }
+        }
+        
+        System.out.println("The Greatest number: " + greatest);
+    }
+}
+
+// Logikanya adalah pertama" kita menginisialisasi array greatest dulu, nanti kita buat
+// Perulangan for untuk memanggil semua iterasi, lalu kita bikin tuh variable num.
+// Fungsinya untuk menjadi pembanding ketika num nya lebih besar dari pada greatest, greatest < num
+// maka greatest = num.

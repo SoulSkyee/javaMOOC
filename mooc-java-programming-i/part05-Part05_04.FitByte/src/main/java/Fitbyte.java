@@ -8,9 +8,10 @@ public class Fitbyte {
     }
 
     public double targetHeartRate(double percentageOfMaximum) {
-        this.age = age + percentageOfMaximum;
-        if (age < restingHeartRate) {
-            
-        }
+        double maximumHearthRate = 206.3 - (0.711 * this.age);
+
+        double result = ((maximumHearthRate - this.restingHeartRate) * (percentageOfMaximum) + this.restingHeartRate);
+
+        return result;
     }
 }
